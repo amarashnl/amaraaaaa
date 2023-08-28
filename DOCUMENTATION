@@ -1,0 +1,30 @@
+IDENTIFICATION DIVISION.
+        PROGRAM-ID. SAMPLE.
+        DATA DIVISION.                                    //basic syntax of the code 
+WORKING-STORAGE SECTION.                                  //this is where you input the data of the program
+        01 STUDENT-NAME.                                  //basic information of the students
+           02 STUDENT-FNAME PIC X(10).
+           02 STUDENT-LNAME PIC X(10).
+        01 STUDENT-ID       PIC X(15).
+        01 STUDENT-SCORES.   
+           02 QUIZ-SCORES1  PIC 9(2).
+           02 QUIZ-SCORES2  PIC 9(2).
+           02 TOTAL-SCORES  PIC 9(5).
+        01 HDG-RTN.                                       //the heading of the program
+           02 FILLER PIC X(5) VALUE SPACES.
+           02 FILLER PIC X(11) VALUE "QUIZ SCORES".
+           02 FILLER PIC X(10) VALUE "BSIT 1-2".
+           02 FILLER PIC X(5) VALUE SPACE.
+ PROCEDURE DIVISION.                                     //the logic of the program happens here 
+            MOVE "AMELIA" TO STUDENT-FNAME.
+            MOVE "BARBIE" TO STUDENT-LNAME.
+            MOVE "086543" TO STUDENT-ID.                 //basically it inputs the information from the working-storage-section.
+            DISPLAY HDG-RTN.                             // displaying the heading
+            DISPLAY STUDENT-FNAME, STUDENT-LNAME,STUDENT-ID.     //displaying the infos
+            DISPLAY 'Input your first score:'.                      
+            ACCEPT  QUIZ-SCORES1.                        //accepting inputs from user 
+            DISPLAY "Input your second score: ".
+            ACCEPT QUIZ-SCORES2.                         //accepting inputs from user 
+            COMPUTE TOTAL-SCORES = QUIZ-SCORES1 + QUIZ-SCORES2.        //computing the given input from the user
+            DISPLAY "Your Total Scores is:", TOTAL-SCORES.           //displaying the answer
+            STOP RUN.                                     
