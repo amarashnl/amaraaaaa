@@ -1,0 +1,30 @@
+IDENTIFICATION DIVISION.
+        PROGRAM-ID. SAMPLE.
+        DATA DIVISION.
+        WORKING-STORAGE SECTION. 
+        01 STUDENT-NAME.    
+           02 STUDENT-FNAME PIC X(10).
+           02 STUDENT-LNAME PIC X(10).
+        01 STUDENT-ID       PIC X(15).
+        01 STUDENT-SCORES.   
+           02 QUIZ-SCORES1  PIC 9(2).
+           02 QUIZ-SCORES2  PIC 9(2).
+           02 TOTAL-SCORES  PIC 9(5).
+        01 HDG-RTN.            
+           02 FILLER PIC X(5) VALUE SPACES.
+           02 FILLER PIC X(11) VALUE "QUIZ SCORES".
+           02 FILLER PIC X(10) VALUE "BSIT 1-2".
+           02 FILLER PIC X(5) VALUE SPACE.
+       PROCEDURE DIVISION.
+            MOVE "AMELIA" TO STUDENT-FNAME.
+            MOVE "BARBIE" TO STUDENT-LNAME.
+            MOVE "086543" TO STUDENT-ID.
+            DISPLAY HDG-RTN.
+            DISPLAY STUDENT-FNAME, STUDENT-LNAME,STUDENT-ID.
+            DISPLAY 'Input your first score:'.
+            ACCEPT  QUIZ-SCORES1.
+            DISPLAY "Input your second score: ".
+            ACCEPT QUIZ-SCORES2.
+            COMPUTE TOTAL-SCORES = QUIZ-SCORES1 + QUIZ-SCORES2.
+            DISPLAY "Your Total Scores is:", TOTAL-SCORES.
+            STOP RUN.
